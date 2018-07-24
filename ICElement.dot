@@ -1,0 +1,254 @@
+digraph G{
+    rankdir=LR;
+    ranksep="1.8"
+    ICElement->INamespace;
+    ICElement->IArchive;
+    ICElement->ILibraryReference;
+    ICElement->IUsing;
+    ICElement->IInclude;
+    ICElement->ITypeDef;
+    ICElement->IBinary;
+    ICElement->IMacro;
+    ICElement->IEnumerator;
+    ICElement->IBinaryContainer;
+    ICElement->IArchiveContainer;
+    ICElement->IBinaryElement;
+    ICElement->ITranslationUnit;
+    ICElement->IWorkingCopy;
+    ICElement->IIncludeReference;
+    ICElement->IDeclaration;
+    ICElement->IAsmLabel;
+    ICElement->ICModel;
+    ICElement->CElement;
+    ICElement->ICElementHandle;
+    ICElement->IContributedCElement;
+    ICElement->ICContainer;
+    ICElement->ICProject;
+    ICElement[color=yellow,style=filled];
+
+    IParent->AsmLabel[color=red];
+    IParent->INamespace[color=red];
+    IParent->IArchive[color=red];
+    IParent->ILibraryReference[color=red];
+    IParent->IStructure[color=red];
+    IParent->IEnumeration[color=red];
+    IParent->IBinary[color=red];
+    IParent->IBinaryContainer[color=red];
+    IParent->IArchiveContainer[color=red];
+    IParent->ITranslationUnit[color=red];
+    IParent->IIncludeReference[color=red];
+    IParent->ICModel[color=red];
+    IParent->IBinaryModule[color=red];
+    IParent->ICContainer[color=red];
+    IParent->ICProject[color=red];
+    IParent[color=yellow,style=filled];
+
+
+    INamespace->Namespace;
+    IArchive->Archive;
+    ILibraryReference->LibraryReference;
+    IUsing->Using;
+    IInclude->Include;
+    ITypeDef->TypeDef;
+    IBinary->Binary;
+    IMacro->Macro;
+    IEnumerator->Enumerator;
+    IBinaryContainer->BinaryContainer;
+    IArchiveContainer->ArchiveContainer;
+    IBinaryElement->BinaryElement;
+    ITranslationUnit->TranslationUnit;
+    ITranslationUnit [color=orange,style=filled];
+    IWorkingCopy->WorkingCopy;
+    IIncludeReference->IncludeReference;
+    IDeclaration->IStructureDeclaration[color=blue]
+    IDeclaration->IFunctionDeclaration[color=blue]
+    IDeclaration->IEnumeration[color=blue]
+    IDeclaration->IVariableDeclaration[color=blue]
+    IDeclaration->IMember[color=blue]
+    IDeclaration[color=green,style=filled];
+    IStructureDeclaration[color=gray,style=filled];
+    IFunctionDeclaration[color=gray,style=filled];
+    IEnumeration[color=gray,style=filled];
+    IVariableDeclaration[color=gray,style=filled];
+    IMember[color=gray,style=filled];
+
+    IAsmLabel->AsmLabel;
+    ICModel->CModel;
+    ICElementHandle->CElementHandle;
+    ICContainer->CContainer;
+    ICProject->CProject;
+
+    INamespace->NamespaceHandle;
+    ILibraryReference->LibraryReferenceArchive;
+    ILibraryReference->LibraryReferenceShared;
+    ITypeDef->TypeDefHandle;
+    Binary->LibraryReferenceShared;
+    IMacro->MacroHandle;
+    IEnumerator->EnumeratorHandle;
+    IBinaryElement->IBinaryFunction;
+    IBinaryFunction->BinaryFunction;
+    IBinaryElement->IBinaryVariable;
+    IBinaryElement->IBinaryModule;
+    IBinaryModule->BinaryModule;
+    BinaryElement->BinaryFunction;
+    BinaryElement->BinaryVariable;
+    TranslationUnit->ExternalTranslationUnit;
+    TranslationUnit->PotentialTranslationUnit;
+    TranslationUnit->WorkingCopy;
+    IWorkingCopy->WorkingCopyHandle;
+
+    IStructureDeclaration->IStructureTemplateDeclaration;
+    IStructureDeclaration->IStructure;
+    IStructureDeclaration->StructureDeclaration;
+
+    
+    IStructureTemplateDeclaration->StructureTemplateDeclaration;
+    IStructureTemplateDeclaration->IStructureTemplate;
+
+    IStructureTemplate->StructureTemplate;
+    IStructureTemplate->StructureTemplateHandle;
+
+
+    StructureHandle->StructureTemplateHandle;
+    Structure->StructureTemplate;
+
+    StructureDeclaration->StructureTemplateDeclaration;
+    StructureDeclaration->Structure;
+
+    IFunctionDeclaration->FunctionDeclarationHandle;
+    IFunctionDeclaration->IFunction;
+    IFunctionDeclaration->IMethodDeclaration;
+    IFunctionDeclaration->FunctionDeclaration;
+    IFunctionDeclaration->IFunctionTemplateDeclaration;
+
+    FunctionDeclarationHandle->FunctionTemplateDeclarationHandle;
+    FunctionDeclarationHandle->FunctionHandle;
+
+    FunctionTemplateDeclarationHandle->FunctionTemplateHandle;
+
+    IFunction->IBinaryFunction;
+    IFunction->FunctionHandle;
+    IFunction->Function;
+    IFunction->IFunctionTemplate;
+
+    Function->FunctionTemplate;
+
+    IFunctionTemplate->FunctionTemplateHandle;
+    IFunctionTemplate->FunctionTemplate;
+
+    IMethodDeclaration->IMethodTemplateDeclaration;
+    IMethodDeclaration->MethodDeclaration;
+    IMethodDeclaration->IMethod;
+    IMethodDeclaration->MethodDeclarationHandle;
+
+    IMethodTemplateDeclaration->MethodTemplateDeclaration;
+    IMethodTemplateDeclaration->IMethodTemplate;
+    IMethodTemplate->MethodTemplate;
+
+    MethodDeclaration->Method;
+    MethodDeclaration->MethodTemplateDeclaration;
+    Method->MethodTemplate;
+
+    IMethod->Method;
+    IMethod->IMethodTemplate;
+    IMethod->MethodHandle;
+
+    MethodDeclarationHandle->MethodHandle;
+
+    FunctionDeclaration->FunctionTemplateDeclaration;
+    FunctionDeclaration->MethodDeclaration;
+    FunctionDeclaration->Function;
+
+    IFunctionTemplateDeclaration->FunctionTemplateDeclarationHandle;
+    IFunctionTemplateDeclaration->FunctionTemplateDeclaration;
+    IFunctionTemplateDeclaration->IFunctionTemplate;
+
+    IEnumeration->Enumeration;
+    IEnumeration->EnumerationHandle;
+
+    IStructure->Structure;
+    IStructure->StructureHandle;
+    IStructure->IStructureTemplate;
+
+    IVariableDeclaration->IField;
+    IVariableDeclaration->VariableDeclaration;
+    IVariableDeclaration->IVariable;
+
+    IField->FieldHandle;
+    IField->Field;
+
+    VariableDeclaration->Field;
+    VariableDeclaration->Variable;
+    Variable->VariableTemplate;
+
+    IVariable->Variable;
+    IVariable->VariableHandle;
+    IVariable->IBinaryVariable;
+    IVariable->BinaryVariable;
+
+    IMember->IField;
+    IMember->IMethodDeclaration;
+
+
+    CElement->Parent;
+    CElement->BinaryElement;
+
+    Parent->BinaryModule;
+    Parent->LibraryReference;
+    Parent->Openable;
+    Parent->SourceManipulation;
+
+    Openable->Binary;
+    Openable->TranslationUnit;
+    Openable->CContainer;
+    Openable->ArchiveContainer;
+    Openable->Archive;
+    Openable->CModel;
+    Openable->CProject;
+    Openable->BinaryContainer;
+    Openable->IncludeReference;
+
+    CContainer->SourceRoot;
+    Archive->LibraryReferenceArchive;
+
+    SourceManipulation->TypeDef [color=green];
+    SourceManipulation->AsmLabel [color=green];
+    SourceManipulation->Enumeration [color=green];
+    SourceManipulation->VariableDeclaration [color=green];
+    SourceManipulation->Enumerator [color=green];
+    SourceManipulation->Using [color=green];
+    SourceManipulation->Include [color=green];
+    SourceManipulation->StructureDeclaration [color=green];
+    SourceManipulation->FunctionDeclaration [color=green];
+    SourceManipulation->Macro [color=green];
+    SourceManipulation->Namespace [color=green];
+    SourceManipulation [color=lightblue,style=filled];
+
+    TypeDef [color=pink,style=filled];
+    AsmLabel [color=pink,style=filled];
+    Enumeration [color=pink,style=filled];
+    VariableDeclaration [color=pink,style=filled];
+    Enumerator [color=pink,style=filled];
+    Using [color=pink,style=filled];
+    Include [color=pink,style=filled];
+    StructureDeclaration [color=pink,style=filled];
+    FunctionDeclaration [color=pink,style=filled];
+    Macro [color=pink,style=filled];
+    Namespace [color=pink,style=filled];
+
+    CElementHandle->FieldHandle;
+    CElementHandle->StructureHandle;
+    CElementHandle->FunctionDeclarationHandle;
+    CElementHandle->NamespaceHandle;
+    CElementHandle->MacroHandle;
+    CElementHandle->EnumerationHandle;
+    CElementHandle->VariableHandle;
+    CElementHandle->EnumeratorHandle;
+    CElementHandle->TypeDefHandle;
+    CElementHandle->MethodDeclarationHandle;
+
+    ICContainer->ISourceRoot;
+    ISourceRoot->SourceRoot;
+
+
+}
